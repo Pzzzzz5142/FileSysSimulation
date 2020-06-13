@@ -1,0 +1,86 @@
+//
+// Created by 张译 on 2020/6/12.
+//
+
+#include "filesys.h"
+
+inode *iget(int dinodeloc) {
+    bool exist = false;
+    int ind = dinodeloc % NHINO;
+    inode *loc = hinode[ind];
+
+    while (loc) {
+        if (loc->i_ino == dinodeloc) {
+            exist = true;
+            loc->i_count += 1;
+            break;
+        }
+        if (loc->nx)
+            loc = loc->nx;
+        else break;
+    }
+
+    if (exist) {
+        return loc;
+    }
+
+    dinode buff;
+    fs.seekp(GetDinodeloc(dinodeloc), ios::beg);
+    fs.read((char *) &buff, sizeof(buff));
+
+    inode *tmp = new inode();
+    tmp->dinode = buff;
+    tmp->i_ino = dinodeloc;
+    if (hinode[ind]) {
+        tmp->nx = hinode[ind];
+        hinode[ind] = tmp;
+    }
+    return tmp;
+}
+
+void iput(inode *pinode) {
+    int ind = pinode->i_ino % NHINO;
+
+    inode *loc = hinode[ind];
+    if (pinode->i_count > 1) {
+        pinode->i_count--;
+        return;
+    } else {
+        if (pinode->dinode.di_number != 0) {
+            fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
+            fs.write((char *) &(pinode->dinode), sizeof(dinode));
+        } else {
+            int blknum = pinode->dinode.di_size / BLOCKSIZ;
+            if (blknum * BLOCKSIZ != pinode->dinode.di_size)
+                blknum++;
+            for (int i = 0; i < blknum; i++) {
+                if (i < NADDR - 3) {
+                    bfree(pinode->dinode.di_addr[i]);
+                } else if (i == NADDR - 3)//一次间址
+                {
+                    unsigned int buff[BLOCKSIZ / sizeof(unsigned int)];
+                    fs.seekp(BLOCKSIZ * pinode->dinode.di_addr[i] + DATASTART, ios::beg);
+                    fs.read((char *) buff, sizeof(BlockCharge));
+                }
+            }
+
+        }
+    }
+
+    if (loc->i_ino == pinode->i_ino) {
+        hinode[ind] = loc->nx;
+        free(loc);
+        return;
+    }
+
+    while (loc->nx) {
+        inode *tmp = loc->nx;
+        if (tmp->i_ino == pinode->i_ino) {
+            loc->nx = tmp->nx;
+            free(tmp);
+            return;
+        }
+    }
+
+}
+

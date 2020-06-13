@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/blockmanage.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+iostream
+-
+algorithm
+-
+string
+-
+memory.h
+-
+fstream
+-
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/format.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/iallocfree.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/igetput.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/main.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/utils.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
