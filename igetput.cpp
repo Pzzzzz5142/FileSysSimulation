@@ -28,9 +28,7 @@ inode *iget(int dinodeloc) {
             loc->i_count += 1;
             break;
         }
-        if (loc->nx)
-            loc = loc->nx;
-        else break;
+        loc = loc->nx;
     }
 
     if (exist) {
@@ -78,6 +76,7 @@ void iput(inode *pinode) {
                 } else//三次间址
                     undirect(pinode->dinode.di_addr[i], 2);
             }
+            ifree(pinode->i_ino);
         }
 
     }
@@ -96,6 +95,5 @@ void iput(inode *pinode) {
             return;
         }
     }
-
 }
 

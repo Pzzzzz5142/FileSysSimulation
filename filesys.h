@@ -10,12 +10,13 @@
 #include <string>
 #include <memory.h>
 #include <fstream>
+#include <vector>
+#include <string.h>
 
 using namespace std;
 
 const int BLOCKSIZ = 1024; //每块的大小
 #define SYSOPENFILE 40 //系统打开文件表的最大数目
-#define DIRNUM 128
 #define DIRSIZ 14
 #define PWDSIZ 12
 #define PWDNUM 32
@@ -66,23 +67,30 @@ struct dinode {
     unsigned short di_number;           /*关联文件数*/
     unsigned short di_mode;            /*存取权限*/
     unsigned short di_uid;
-    unsigned short di_gid;
     unsigned long di_size;             /*文件大小*/
     unsigned int di_addr[NADDR];      /*物理块号*/
-    unsigned int di_nx;
+    int di_nx;
 };
+
 struct inode {
     struct inode *nx;
-    char i_flag;
     unsigned int i_ino;                 /*磁盘i节点标志*/
     unsigned int i_count;               /*引用计数*/
     dinode dinode;
+
+    inode() {
+        nx = nullptr;
+        i_count = 1;
+        i_ino = 0;
+    }
 };
+
 const int MAXINODE = BLOCKSIZ / sizeof(dinode);
 struct direct {
     char d_name[DIRSIZ];
-    unsigned int d_ino;
+    int d_ino;
 };
+const int DIRNUM = BLOCKSIZ / sizeof(direct);
 struct BlockCharge {
     int ind;
     int stk[GROUPNUM];
@@ -102,7 +110,8 @@ struct pwd {
     char password[PWDSIZ];
 };
 struct dir {
-    struct direct direct[DIRNUM];
+    vector<string> fa;
+    direct direct[DIRNUM];
     int size;                            /*当前目录大小*/
 };
 
@@ -122,6 +131,7 @@ struct user {
 
 extern fstream fs;
 extern inode *hinode[NHINO]; //内存中inode的hash索引
+extern dir curdir;
 
 template<class T>
 void ReadABlock(int num, T &a) {
@@ -142,6 +152,8 @@ extern void ErrorHandling(const string &message);
 
 extern inode *iget(int dinodeloc);
 
+extern void ifree(int dinodeid);
+
 extern int balloc();
 
 extern int GetDinodeloc(int dinodeid);
@@ -149,6 +161,12 @@ extern int GetDinodeloc(int dinodeid);
 extern void bfree(int num);
 
 extern void format();
+
+extern int name_is_exist(char *name);
+
+extern int dir_alloc_name(char *name);
+
+extern inode *ialloc();
 
 extern void login();
 
