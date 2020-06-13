@@ -67,7 +67,7 @@ void iput(inode *pinode) {
             if (blknum * BLOCKSIZ != pinode->dinode.di_size)
                 blknum++;
             for (int i = 0; i < blknum; i++) {
-                if (i < NADDR - 3) {
+                if (i < NADDR - 3) {//无间址
                     bfree(pinode->dinode.di_addr[i]);
                 } else if (i == NADDR - 3)//一次间址
                 {
@@ -81,24 +81,21 @@ void iput(inode *pinode) {
         }
 
     }
-}
 
-if (loc->i_ino == pinode->i_ino) {
-hinode[ind] = loc->
-nx;
-free(loc);
-return;
-}
+    if (loc->i_ino == pinode->i_ino) {
+        hinode[ind] = loc->nx;
+        free(loc);
+        return;
+    }
 
-while (loc->nx) {
-inode *tmp = loc->nx;
-if (tmp->i_ino == pinode->i_ino) {
-loc->
-nx = tmp->nx;
-free(tmp);
-return;
-}
-}
+    while (loc->nx) {
+        inode *tmp = loc->nx;
+        if (tmp->i_ino == pinode->i_ino) {
+            loc->nx = tmp->nx;
+            free(tmp);
+            return;
+        }
+    }
 
 }
 
