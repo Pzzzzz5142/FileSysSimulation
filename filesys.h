@@ -124,10 +124,11 @@ struct file {
 struct user {
     unsigned short u_default_mode;
     unsigned short u_uid;
-    unsigned short u_gid;
     unsigned short u_ofile[NOFILE];       /*用户打开文件表*/
+    unsigned int open_num;
     /*system open file pointer number */
 };
+
 
 extern fstream fs;
 extern inode *hinode[NHINO]; //内存中inode的hash索引
