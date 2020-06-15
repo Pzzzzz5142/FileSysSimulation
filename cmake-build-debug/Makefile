@@ -312,6 +312,33 @@ name.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/name.cpp.s
 .PHONY : name.cpp.s
 
+opfl.o: opfl.cpp.o
+
+.PHONY : opfl.o
+
+# target to build an object file
+opfl.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.o
+.PHONY : opfl.cpp.o
+
+opfl.i: opfl.cpp.i
+
+.PHONY : opfl.i
+
+# target to preprocess a source file
+opfl.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.i
+.PHONY : opfl.cpp.i
+
+opfl.s: opfl.cpp.s
+
+.PHONY : opfl.s
+
+# target to generate assembly for a file
+opfl.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s
+.PHONY : opfl.cpp.s
+
 try.o: try.cpp.o
 
 .PHONY : try.o
@@ -396,6 +423,9 @@ help:
 	@echo "... name.o"
 	@echo "... name.i"
 	@echo "... name.s"
+	@echo "... opfl.o"
+	@echo "... opfl.i"
+	@echo "... opfl.s"
 	@echo "... try.o"
 	@echo "... try.i"
 	@echo "... try.s"

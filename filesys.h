@@ -20,7 +20,7 @@ const int BLOCKSIZ = 1024; //每块的大小
 #define DIRSIZ 14
 #define PWDSIZ 12
 #define PWDNUM 32
-#define NOFILE 20
+#define USEROPENFILE 20
 #define NADDR 10
 const int NHINO = 128;   //内存inode hash表长度
 #define USERNUM 10
@@ -118,13 +118,13 @@ struct dir {
 struct file {
     char f_flag;                          /*文件操作标志*/
     unsigned int f_count;                 /*引用计数*/
-    unsigned int f_inode;                 /*指向内存i节点*/
+    inode* f_inode;                 /*指向内存i节点*/
     unsigned long f_off;              /*read/write character pointer*/
 };
 struct user {
     unsigned short u_default_mode;
     unsigned short u_uid;
-    unsigned short u_ofile[NOFILE];       /*用户打开文件表*/
+    unsigned short u_ofile[USEROPENFILE];       /*用户打开文件表*/
     unsigned int open_num;
     /*system open file pointer number */
 };
@@ -133,6 +133,8 @@ struct user {
 extern fstream fs;
 extern inode *hinode[NHINO]; //内存中inode的hash索引
 extern dir curdir;
+extern file sysopen_file[SYSOPENFILE];
+extern user users[USERNUM];
 
 template<class T>
 void ReadABlock(int num, T &a) {
@@ -152,6 +154,8 @@ extern int x();
 extern void ErrorHandling(const string &message);
 
 extern inode *iget(int dinodeloc);
+
+extern void iput(inode *pinode);
 
 extern void ifree(int dinodeid);
 
@@ -173,9 +177,9 @@ extern void login();
 
 extern void logout();
 
-extern void create();
+extern int create(int user_id, char *name);
 
-extern void open();
+extern int opfl(int user_id, char *filename, int mode);
 
 extern void close();
 
