@@ -173,11 +173,13 @@ extern int dir_alloc_name(char *name);
 
 extern inode *ialloc();
 
+extern void filefree(dinode& d);
+
 extern void login();
 
 extern void logout();
 
-extern int create(int user_id, char *name);
+extern int create(int user_id, char *name,int mode);
 
 extern int opfl(int user_id, char *filename, int mode);
 

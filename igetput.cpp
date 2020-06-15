@@ -4,17 +4,28 @@
 
 #include "filesys.h"
 
-void undirect(int loc, int lv) {
+int undirect(int loc, int lv, int lft) {
     int buff[BLOCKSIZ / sizeof(unsigned int)];
     fs.seekp(BLOCKSIZ * loc + DATASTART, ios::beg);
     fs.read((char *) buff, sizeof(BlockCharge));
     int len = sizeof(buff) / sizeof(int);
+    int tmp = 1;
+    int res = 0;
+    for (int i = 0; i < lv - 1; i++)
+        tmp *= len;
     for (int i = 0; i < len && buff[i] != -1; i++) {
-        if (lv != 0)
-            undirect(buff[i], lv - 1);
-        else
+        if (lft <= 0)
+            break;
+        if (lv != 0) {
+            res += undirect(buff[i], lv - 1, min(lft, tmp));
+            lft -= tmp;
+        } else {
             bfree(buff[i]);
+            lft -= 1;
+            res++;
+        }
     }
+    return res;
 }
 
 inode *iget(int dinodeloc) {
@@ -61,21 +72,7 @@ void iput(inode *pinode) {
             fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
             fs.write((char *) &(pinode->dinode), sizeof(dinode));
         } else {
-            int blknum = pinode->dinode.di_size / BLOCKSIZ;
-            if (blknum * BLOCKSIZ != pinode->dinode.di_size)
-                blknum++;
-            for (int i = 0; i < blknum; i++) {
-                if (i < NADDR - 3) {//无间址
-                    bfree(pinode->dinode.di_addr[i]);
-                } else if (i == NADDR - 3)//一次间址
-                {
-                    undirect(pinode->dinode.di_addr[i], 0);
-                } else if (i == NADDR - 2)//两次间址
-                {
-                    undirect(pinode->dinode.di_addr[i], 1);
-                } else//三次间址
-                    undirect(pinode->dinode.di_addr[i], 2);
-            }
+            filefree(pinode->dinode);
             ifree(pinode->i_ino);
         }
 
