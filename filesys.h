@@ -118,7 +118,7 @@ struct dir {
 struct file {
     char f_flag;                          /*文件操作标志*/
     unsigned int f_count;                 /*引用计数*/
-    inode* f_inode;                 /*指向内存i节点*/
+    inode *f_inode;                 /*指向内存i节点*/
     unsigned long f_off;              /*read/write character pointer*/
 };
 struct user {
@@ -173,13 +173,13 @@ extern int dir_alloc_name(char *name);
 
 extern inode *ialloc();
 
-extern void filefree(dinode& d);
+extern void filefree(dinode &d);
 
 extern void login();
 
 extern void logout();
 
-extern int create(int user_id, char *name,int mode);
+extern int create(int user_id, char *name, int mode);
 
 extern int opfl(int user_id, char *filename, int mode);
 
@@ -198,5 +198,7 @@ extern void mkdir();
 extern void cd();
 
 extern void ls();
+
+extern int undirect(int loc, int lv, int lft);
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

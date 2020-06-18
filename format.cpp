@@ -9,6 +9,7 @@ void format() {
     fs.seekp(0, ios::beg);
     fs.write(buff, sizeof(buff));
     direct dir_buff[DIRNUM];
+    memset(hinode,0,sizeof(hinode));
 
     SuperBlock.charge.ind = 0;
     SuperBlock.charge.stk[0] = -1;
