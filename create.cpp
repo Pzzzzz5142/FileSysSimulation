@@ -16,11 +16,9 @@ int create(int user_id, char *name, int mode) {
 
     if (pos == -1) {
         int dir_num = dir_alloc_name(name);
-        int blkloc = balloc();
         curdir.direct[dir_num].d_ino = blkloc;
         inode *tmp = ialloc();
-        tmp->dinode.di_addr[0] = blkloc;
-        tmp->dinode.di_size = 1;
+        tmp->dinode.di_size = 0;
         tmp->dinode.di_mode = DIFILE;
         tmp->dinode.di_uid = user_id;
         tmp->dinode.di_number = 1;

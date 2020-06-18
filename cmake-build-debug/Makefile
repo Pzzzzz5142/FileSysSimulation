@@ -339,6 +339,33 @@ opfl.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s
 .PHONY : opfl.cpp.s
 
+rdfl.o: rdfl.cpp.o
+
+.PHONY : rdfl.o
+
+# target to build an object file
+rdfl.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o
+.PHONY : rdfl.cpp.o
+
+rdfl.i: rdfl.cpp.i
+
+.PHONY : rdfl.i
+
+# target to preprocess a source file
+rdfl.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.i
+.PHONY : rdfl.cpp.i
+
+rdfl.s: rdfl.cpp.s
+
+.PHONY : rdfl.s
+
+# target to generate assembly for a file
+rdfl.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.s
+.PHONY : rdfl.cpp.s
+
 try.o: try.cpp.o
 
 .PHONY : try.o
@@ -426,6 +453,9 @@ help:
 	@echo "... opfl.o"
 	@echo "... opfl.i"
 	@echo "... opfl.s"
+	@echo "... rdfl.o"
+	@echo "... rdfl.i"
+	@echo "... rdfl.s"
 	@echo "... try.o"
 	@echo "... try.i"
 	@echo "... try.s"
