@@ -4,6 +4,9 @@
 CMakeFiles/UnixFileSysStimulator.dir/blockmanage.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/blockmanage.cpp
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
@@ -25,6 +28,9 @@ CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o
 CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/opfl.cpp
+CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp
 CMakeFiles/UnixFileSysStimulator.dir/try.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/try.cpp
 CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.o

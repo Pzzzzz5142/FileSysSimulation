@@ -187,18 +187,31 @@ CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/opfl.cpp -o CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s
 
-CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o: CMakeFiles/UnixFileSysStimulator.dir/flags.make
-CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o: ../rdfl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o -c /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdfl.cpp
+CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o: CMakeFiles/UnixFileSysStimulator.dir/flags.make
+CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o: ../rdwt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o -c /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp
 
-CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdfl.cpp > CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.i
+CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp > CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.i
 
-CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdfl.cpp -o CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.s
+CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp -o CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.s
+
+CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o: CMakeFiles/UnixFileSysStimulator.dir/flags.make
+CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o: ../close.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o -c /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp
+
+CMakeFiles/UnixFileSysStimulator.dir/close.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnixFileSysStimulator.dir/close.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp > CMakeFiles/UnixFileSysStimulator.dir/close.cpp.i
+
+CMakeFiles/UnixFileSysStimulator.dir/close.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/close.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp -o CMakeFiles/UnixFileSysStimulator.dir/close.cpp.s
 
 # Object files for target UnixFileSysStimulator
 UnixFileSysStimulator_OBJECTS = \
@@ -212,7 +225,8 @@ UnixFileSysStimulator_OBJECTS = \
 "CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o" \
 "CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o" \
 "CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.o" \
-"CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o"
+"CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o" \
+"CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o"
 
 # External object files for target UnixFileSysStimulator
 UnixFileSysStimulator_EXTERNAL_OBJECTS =
@@ -227,10 +241,11 @@ UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.o
-UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o
+UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o
+UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/build.make
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable UnixFileSysStimulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable UnixFileSysStimulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnixFileSysStimulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

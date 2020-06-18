@@ -30,8 +30,8 @@ const int DINODEBLK = 32;
 const int FILEBLK = 512;
 #define NICFREE 50
 #define NICINOD 50
-#define DINODESTART  2*BLOCKSIZ
-#define DATASTART (2+DINODEBLK)*BLOCKSIZ
+#define DINODESTART  BLOCKSIZ
+#define DATASTART (1+DINODEBLK)*BLOCKSIZ
 #define GROUPNUM 50
 /*di_node*/
 #define DIEMPTY 00000
@@ -95,7 +95,7 @@ struct BlockCharge {
     int ind;
     int stk[GROUPNUM];
 };
-struct {
+struct SP {
     BlockCharge charge;
     unsigned short s_isize;             /*i节点块数*/
     unsigned long s_fsize;             /*数据块数*/
@@ -103,7 +103,7 @@ struct {
     unsigned int s_ninode;          /*number of free inode in s_inode*/
     int ihead;
     char s_fmod;                   /*超级块修改标志*/
-} SuperBlock;
+};
 struct pwd {
     unsigned short p_uid;
     unsigned short p_gid;
@@ -135,6 +135,7 @@ extern inode *hinode[NHINO]; //内存中inode的hash索引
 extern dir curdir;
 extern file sysopen_file[SYSOPENFILE];
 extern user users[USERNUM];
+extern SP SuperBlock;
 
 template<class T>
 void ReadABlock(int num, T &a) {
@@ -146,6 +147,7 @@ template<class T>
 void WriteABlock(int num, const T &a) {
     fs.seekp(DATASTART + num * BLOCKSIZ, ios::beg);
     fs.write((char *) &a, sizeof(T));
+    fs.flush();
 }
 
 
@@ -183,13 +185,13 @@ extern int create(int user_id, char *name, int mode);
 
 extern int opfl(int user_id, char *filename, int mode);
 
-extern void close();
+extern void close(unsigned int user_id, unsigned short cfd);
 
 extern void vi();
 
-extern void read();
+extern int read(int user, int fl, char *buff, int size);
 
-extern void write();
+extern int write(int user, int fl, char *buff, int size);
 
 extern void del();
 
@@ -199,6 +201,10 @@ extern void cd();
 
 extern void ls();
 
-extern int undirect(int loc, int lv, int lft);
+extern vector<int> undirect(int loc, int lv, int lft);
+
+extern void fileread(dinode &d, char *buff, int size, int off);
+
+extern void filewrite(dinode &d, char *buff, int size, int off);
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

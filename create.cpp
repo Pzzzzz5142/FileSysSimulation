@@ -16,12 +16,14 @@ int create(int user_id, char *name, int mode) {
 
     if (pos == -1) {
         int dir_num = dir_alloc_name(name);
-        curdir.direct[dir_num].d_ino = blkloc;
         inode *tmp = ialloc();
         tmp->dinode.di_size = 0;
         tmp->dinode.di_mode = DIFILE;
         tmp->dinode.di_uid = user_id;
         tmp->dinode.di_number = 1;
+        curdir.direct[dir_num].d_ino = tmp->i_ino;
+
+
 
         int syspos, userpos;
         for (syspos = 0; syspos < SYSOPENFILE; syspos++) {
@@ -43,9 +45,10 @@ int create(int user_id, char *name, int mode) {
         users[user_ind].u_ofile[userpos] = syspos;
         users[user_ind].open_num++;
         sysopen_file[syspos].f_count = 1;
-        sysopen_file[syspos].f_flag = DIFILE;
+        sysopen_file[syspos].f_flag = FWRITE;
         sysopen_file[syspos].f_inode = tmp;
         sysopen_file[syspos].f_off = 0;
+
         return userpos;
     } else {
         printf("Warning! You are OVERWRITING the file!");
@@ -78,7 +81,7 @@ int create(int user_id, char *name, int mode) {
         users[user_ind].u_ofile[userpos] = syspos;
         users[user_ind].open_num++;
         sysopen_file[syspos].f_count = 1;
-        sysopen_file[syspos].f_flag = DIFILE;
+        sysopen_file[syspos].f_flag = FWRITE;
         sysopen_file[syspos].f_inode = pre_inode;
         sysopen_file[syspos].f_off = 0;
         return userpos;

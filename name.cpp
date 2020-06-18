@@ -6,7 +6,7 @@
 
 int name_is_exist(char *name) {
     for (int i = 0; i < DIRSIZ; i++) {
-        if (!strcmp(curdir.direct[i].d_name, name)&&curdir.direct[i].d_ino!=-1) {
+        if (!strcmp(curdir.direct[i].d_name, name) && curdir.direct[i].d_ino != -1) {
             return i;
         }
     }
@@ -15,7 +15,7 @@ int name_is_exist(char *name) {
 
 int dir_alloc_name(char *name) {
     int res = -1;
-    for (int i = 0; i < DIRSIZ; i++) {
+    for (int i = 0; i < DIRNUM; i++) {
         if (curdir.direct[i].d_ino == -1) {
             res = i;
             break;

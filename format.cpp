@@ -19,13 +19,13 @@ void format() {
     }
 
     SuperBlock.ihead = -1;
-    for (int i = 0; i < MAXINODE * DINODEBLK; i++) {
+    for (int i = 3; i < MAXINODE * DINODEBLK; i++) {
         ifree(i);
     }
 
     inode *tmp = iget(0);//最根的目录
     tmp->dinode.di_mode = DIDIR;
-    tmp->dinode.di_number = 0;
+    tmp->dinode.di_number = 1;
     tmp->dinode.di_addr[0] = 0;
     tmp->dinode.di_size = 3 * sizeof(direct);
     dir_buff[0].d_ino = tmp->dinode.di_addr[0];
@@ -54,7 +54,8 @@ void format() {
     iput(tmp);
 
     tmp = iget(2);
-    tmp->dinode.di_mode = DIDIR;
+    tmp->dinode.di_mode = DIFILE;
+    tmp->dinode.di_number=1;
     tmp->dinode.di_number = 2;
     iput(tmp);
 

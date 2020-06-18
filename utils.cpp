@@ -10,28 +10,25 @@ void ErrorHandling(const string &message) {
 }
 
 int GetDinodeloc(int dinodeid) {
-    return (dinodeid / MAXINODE + dinodeid % MAXINODE) * BLOCKSIZ + DINODESTART;
+    return (dinodeid / MAXINODE) * BLOCKSIZ + DINODESTART+(dinodeid%MAXINODE)*sizeof(dinode);
 }
 
-int undirect(int loc, int lv, int lft) {
+vector<int> undirect(int loc, int lv, int lft) {
     int buff[BLOCKSIZ / sizeof(unsigned int)];
     fs.seekp(BLOCKSIZ * loc + DATASTART, ios::beg);
-    fs.read((char *) buff, sizeof(BlockCharge));
+    fs.read((char *) buff, sizeof(buff));
     int len = sizeof(buff) / sizeof(int);
     int tmp = 1;
-    int res = 0;
+    vector<int> res;
     for (int i = 0; i < lv - 1; i++)
         tmp *= len;
-    for (int i = 0; i < len && buff[i] != -1; i++) {
-        if (lft <= 0)
-            break;
+    for (int i = 0; i < len && lft > 0; i++, lft -= tmp) {
         if (lv != 0) {
-            res += undirect(buff[i], lv - 1, min(lft, tmp));
-            lft -= tmp;
+             vector<int>tt= undirect(buff[i], lv - 1, min(lft, tmp));
+             for(auto x:tt)
+                 res.push_back(x);
         } else {
-            bfree(buff[i]);
-            lft -= 1;
-            res++;
+            res.push_back(i);
         }
     }
     return res;

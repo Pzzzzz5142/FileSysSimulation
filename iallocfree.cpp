@@ -18,7 +18,9 @@ inode *ialloc() {
 void ifree(int dinodeid) {
     fs.seekp(GetDinodeloc(dinodeid), ios::beg);
     dinode buff;
+    memset(&buff,0,sizeof(buff));
     buff.di_nx = SuperBlock.ihead;
+
     fs.write((char *) &buff, sizeof(dinode));
     SuperBlock.ihead = dinodeid;
     SuperBlock.s_ninode++;

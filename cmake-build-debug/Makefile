@@ -150,6 +150,33 @@ blockmanage.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/blockmanage.cpp.s
 .PHONY : blockmanage.cpp.s
 
+close.o: close.cpp.o
+
+.PHONY : close.o
+
+# target to build an object file
+close.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o
+.PHONY : close.cpp.o
+
+close.i: close.cpp.i
+
+.PHONY : close.i
+
+# target to preprocess a source file
+close.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/close.cpp.i
+.PHONY : close.cpp.i
+
+close.s: close.cpp.s
+
+.PHONY : close.s
+
+# target to generate assembly for a file
+close.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/close.cpp.s
+.PHONY : close.cpp.s
+
 create.o: create.cpp.o
 
 .PHONY : create.o
@@ -339,32 +366,32 @@ opfl.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.s
 .PHONY : opfl.cpp.s
 
-rdfl.o: rdfl.cpp.o
+rdwt.o: rdwt.cpp.o
 
-.PHONY : rdfl.o
+.PHONY : rdwt.o
 
 # target to build an object file
-rdfl.cpp.o:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.o
-.PHONY : rdfl.cpp.o
+rdwt.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o
+.PHONY : rdwt.cpp.o
 
-rdfl.i: rdfl.cpp.i
+rdwt.i: rdwt.cpp.i
 
-.PHONY : rdfl.i
+.PHONY : rdwt.i
 
 # target to preprocess a source file
-rdfl.cpp.i:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.i
-.PHONY : rdfl.cpp.i
+rdwt.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.i
+.PHONY : rdwt.cpp.i
 
-rdfl.s: rdfl.cpp.s
+rdwt.s: rdwt.cpp.s
 
-.PHONY : rdfl.s
+.PHONY : rdwt.s
 
 # target to generate assembly for a file
-rdfl.cpp.s:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdfl.cpp.s
-.PHONY : rdfl.cpp.s
+rdwt.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.s
+.PHONY : rdwt.cpp.s
 
 try.o: try.cpp.o
 
@@ -432,6 +459,9 @@ help:
 	@echo "... blockmanage.o"
 	@echo "... blockmanage.i"
 	@echo "... blockmanage.s"
+	@echo "... close.o"
+	@echo "... close.i"
+	@echo "... close.s"
 	@echo "... create.o"
 	@echo "... create.i"
 	@echo "... create.s"
@@ -453,9 +483,9 @@ help:
 	@echo "... opfl.o"
 	@echo "... opfl.i"
 	@echo "... opfl.s"
-	@echo "... rdfl.o"
-	@echo "... rdfl.i"
-	@echo "... rdfl.s"
+	@echo "... rdwt.o"
+	@echo "... rdwt.i"
+	@echo "... rdwt.s"
 	@echo "... try.o"
 	@echo "... try.i"
 	@echo "... try.s"

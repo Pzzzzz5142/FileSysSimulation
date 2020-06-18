@@ -83,6 +83,9 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/blockmanage.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
@@ -107,7 +110,7 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/opfl.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
-		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdfl.cpp">
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/try.cpp">
