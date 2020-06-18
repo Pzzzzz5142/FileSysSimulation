@@ -21,7 +21,7 @@ int create(int user_id, char *name, int mode) {
         inode *tmp = ialloc();
         tmp->dinode.di_addr[0] = blkloc;
         tmp->dinode.di_size = 1;
-        tmp->dinode.di_mode = DIDIR;
+        tmp->dinode.di_mode = DIFILE;
         tmp->dinode.di_uid = user_id;
         tmp->dinode.di_number = 1;
 
@@ -45,7 +45,7 @@ int create(int user_id, char *name, int mode) {
         users[user_ind].u_ofile[userpos] = syspos;
         users[user_ind].open_num++;
         sysopen_file[syspos].f_count = 1;
-        sysopen_file[syspos].f_flag = DIDIR;
+        sysopen_file[syspos].f_flag = DIFILE;
         sysopen_file[syspos].f_inode = tmp;
         sysopen_file[syspos].f_off = 0;
         return userpos;
@@ -56,7 +56,7 @@ int create(int user_id, char *name, int mode) {
         pre_inode->dinode.di_uid = user_id;
         pre_inode->dinode.di_size = 1;
         pre_inode->dinode.di_addr[0] = balloc();
-        pre_inode->dinode.di_mode = DIDIR;
+        pre_inode->dinode.di_mode = DIFILE;
         for (int i = 0; i < SYSOPENFILE; i++)
             if (sysopen_file[i].f_inode == pre_inode)
                 return i;
@@ -80,7 +80,7 @@ int create(int user_id, char *name, int mode) {
         users[user_ind].u_ofile[userpos] = syspos;
         users[user_ind].open_num++;
         sysopen_file[syspos].f_count = 1;
-        sysopen_file[syspos].f_flag = DIDIR;
+        sysopen_file[syspos].f_flag = DIFILE;
         sysopen_file[syspos].f_inode = pre_inode;
         sysopen_file[syspos].f_off = 0;
         return userpos;

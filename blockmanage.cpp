@@ -35,7 +35,7 @@ int balloc() {
 
     auto &SuperInM = SuperBlock.charge;
 
-    if (SuperInM.ind == 1) {
+    if (SuperInM.ind == 0) {
         int alloc = SuperInM.stk[SuperInM.ind];
         SuperBlock.s_nfree--;
         ReadABlock<BlockCharge>(SuperInM.stk[SuperInM.ind], SuperInM);
@@ -50,7 +50,8 @@ void bfree(int num) {
     auto &SuperInM = SuperBlock.charge;
     if (SuperInM.ind == GROUPNUM) {
         WriteABlock<BlockCharge>(num, SuperInM);
-        SuperInM.ind = -1;
+        SuperInM.stk[0] = num;
+        SuperInM.ind = 0;
     } else {
         SuperInM.stk[++SuperInM.ind] = num;
     }
