@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/blockmanage.cpp
-filesys.h
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
-
 /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 iostream
 -
@@ -25,4 +21,8 @@ vector
 -
 string.h
 -
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/login.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 

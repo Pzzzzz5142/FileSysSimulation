@@ -167,11 +167,13 @@ void filewrite(dinode &d, char *buff, int size, int off) {
             if (read_num == off_blk) {
                 fs.seekp(DATASTART + BLOCKSIZ * d.di_addr[i] + off_in_blk, ios::beg);
                 fs.write(buff + loc, min(BLOCKSIZ - off_in_blk, size));
+                fs.flush();
                 loc += BLOCKSIZ - off_in_blk;
                 size -= min(BLOCKSIZ - off_in_blk, size);
             } else if (read_num > off_blk) {
                 fs.seekp(DATASTART + BLOCKSIZ * d.di_addr[i], ios::beg);
                 fs.write(buff + loc, min(size, BLOCKSIZ));
+                fs.flush();
                 loc += BLOCKSIZ - off_in_blk;
                 size -= BLOCKSIZ;
             }
@@ -185,11 +187,13 @@ void filewrite(dinode &d, char *buff, int size, int off) {
                 if (read_num == off_blk) {
                     fs.seekp(DATASTART + BLOCKSIZ * x + off_in_blk, ios::beg);
                     fs.write(buff + loc, min(BLOCKSIZ - off_in_blk, size));
+                    fs.flush();
                     loc += BLOCKSIZ - off_in_blk;
                     size -= min(BLOCKSIZ - off_in_blk, size);
                 } else if (read_num > off_blk) {
                     fs.seekp(DATASTART + BLOCKSIZ * x, ios::beg);
                     fs.write(buff + loc, min(size, BLOCKSIZ));
+                    fs.flush();
                     loc += BLOCKSIZ;
                     size -= BLOCKSIZ;
                 }
@@ -204,11 +208,13 @@ void filewrite(dinode &d, char *buff, int size, int off) {
                 if (read_num == off_blk) {
                     fs.seekp(DATASTART + BLOCKSIZ * x + off_in_blk, ios::beg);
                     fs.write(buff + loc, min(BLOCKSIZ - off_in_blk, size));
+                    fs.flush();
                     loc += BLOCKSIZ - off_in_blk;
                     size -= min(BLOCKSIZ - off_in_blk, size);
                 } else if (read_num > off_blk) {
                     fs.seekp(DATASTART + BLOCKSIZ * x, ios::beg);
                     fs.write(buff + loc, min(size, BLOCKSIZ));
+                    fs.flush();
                     loc += BLOCKSIZ;
                     size -= BLOCKSIZ;
                 }

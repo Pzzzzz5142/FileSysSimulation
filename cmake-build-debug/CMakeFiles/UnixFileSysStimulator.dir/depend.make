@@ -19,6 +19,12 @@ CMakeFiles/UnixFileSysStimulator.dir/iallocfree.cpp.o: ../iallocfree.cpp
 CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o: ../igetput.cpp
 
+CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o: ../install.cpp
+
+CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o: ../login.cpp
+
 CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o: ../main.cpp
 

@@ -18,5 +18,6 @@ void close(unsigned int user_id, unsigned short cfd)        /*close*/
 
     iput(inode);
     sysopen_file[users[k].u_ofile[cfd]].f_count--;
+    sysopen_file[users[k].u_ofile[cfd]].f_inode = nullptr;
     users[k].u_ofile[cfd] = SYSOPENFILE + 1;
 }

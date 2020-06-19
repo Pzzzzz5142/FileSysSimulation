@@ -9,7 +9,7 @@ void format() {
     fs.seekp(0, ios::beg);
     fs.write(buff, sizeof(buff));
     direct dir_buff[DIRNUM];
-    memset(hinode,0,sizeof(hinode));
+    memset(hinode, 0, sizeof(hinode));
 
     SuperBlock.charge.ind = 0;
     SuperBlock.charge.stk[0] = -1;
@@ -55,8 +55,13 @@ void format() {
 
     tmp = iget(2);
     tmp->dinode.di_mode = DIFILE;
-    tmp->dinode.di_number=1;
+    tmp->dinode.di_number = 1;
     tmp->dinode.di_number = 2;
+    strcpy(buff, "root\tpassword");
+    tmp->dinode.di_size = strlen(buff) * sizeof(char);
+    tmp->dinode.di_addr[0] = balloc();
+    fs.seekp(DATASTART + tmp->dinode.di_addr[0] * BLOCKSIZ, ios::beg);
+    fs.write(buff, sizeof(char) * (strlen(buff) + 1));
     iput(tmp);
 
     SuperBlock.s_isize = MAXINODE * DINODEBLK;
@@ -64,6 +69,11 @@ void format() {
     SuperBlock.s_nfree = FILEBLK - 2;
     SuperBlock.s_fsize = FILEBLK;
 
-    fs.seekp(0,ios::beg);
-    fs.write((char*)&SuperBlock,sizeof(SuperBlock));
+    for (int i = 0; i < SYSOPENFILE; i++) {
+        sysopen_file[i].f_inode = nullptr;
+    }
+
+    fs.seekp(0, ios::beg);
+    fs.write((char *) &SuperBlock, sizeof(SuperBlock));
+    fs.flush();
 }

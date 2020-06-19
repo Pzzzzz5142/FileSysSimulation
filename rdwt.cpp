@@ -21,7 +21,7 @@ int read(int user, int fl, char *buff, int size) {
 
     inode *node = opfl.f_inode;
     if (opfl.f_flag != FREAD) {
-        ErrorHandling("This file is not open for read!");
+        ErrorHandling("This file is not open for read!" + to_string(opfl.f_flag));
     }
 
     off = opfl.f_off;
@@ -61,7 +61,7 @@ int write(int user, int fl, char *buff, int size) {
 
     node->dinode.di_size = off + size;
 
-    int blk = (size + BLOCKSIZ - 1) / BLOCKSIZ;
+    int blk = (size + BLOCKSIZ) / BLOCKSIZ;
     int note = BLOCKSIZ / sizeof(int);
     int loc = 0;
     int off_in_blk = off % BLOCKSIZ, off_blk = off / BLOCKSIZ;

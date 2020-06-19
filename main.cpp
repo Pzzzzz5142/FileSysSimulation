@@ -10,27 +10,26 @@ SP SuperBlock;
 int main() {
     std::cout << "Hello, World!" << std::endl;
     format();
-    cout << sizeof(SuperBlock);
-    curdir.size = 3;
-    curdir.direct[0].d_ino = 0;
-    curdir.direct[1].d_ino = 0;
-    curdir.direct[2].d_ino = 1;
-    for (int i = 3; i < DIRNUM; i++) {
-        curdir.direct[i].d_ino = -1;
-    }char buff[10000];
-    for (int i = 0; i < USEROPENFILE; i++)
-        users[0].u_ofile[i] = SYSOPENFILE + 1;
+    install();
+    login(0,"password");
+    char buff[10000] = "Hello World alasdhfklklkajhdsflkjahsldfkhajsfdlsdjmmasldkfalsdhfkljashdflkjhasdflkjhaslkfdhklhadfkjhalksdhjflkahsdflkahjsdflf;laksdjf;alskjdfkjabsdflkajchiewruopisdfalkshdfkbvljkhdfjhpoeiurqwoiaksjdhfakbv.asdfhsf;lkahsdfjhakjsdfhlaksjdhflkasdjhfiopuerlajshdfklajhsfdklajhsdfkljahsdkfjhaksdjhfkashdfkjhasfdkhsakdfhkasjdhfkjshadfkjasfdkshdflkajhsdflkjahsdlkfjhalskdjfhlakjshdfklajshdfnambcxvzm,nxbcvlaksjdfhlkasjhdfiquweyralksjdfhlaksjhdflaksjhmnbxvm,znxbcvjkshdflkasjdhfasknbm,znbvlaksjhdfkajshriqwufeaskdflkasbvmnasbflkajhsdfkljasfsf";
+    for(int i=strlen(buff);i<2048;i++){
+        buff[i]='i';
+        buff[i+1]='\0';
+    }
+    cout<<strlen(buff)*sizeof(char)<<endl;
     try {
         auto cre = create(0, "hello", FWRITE);
-        auto wt = write(0, cre, "Hello World", sizeof("Hello World"));
+        write(0, cre, buff, sizeof(char)*strlen(buff));
         close(0, cre);
         auto op = opfl(0, "hello", FREAD);
-
         read(0, op, buff, 100000);
+        cout << buff << endl;
+        cout<<strlen(buff)<<endl;
     } catch (string s) {
         cout << s << endl;
     }
 
-    fs.close();
+    //fs.close();
     return 0;
 }

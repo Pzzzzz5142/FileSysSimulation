@@ -112,6 +112,7 @@ struct pwd {
 struct dir {
     vector<string> fa;
     direct direct[DIRNUM];
+    int user_id;
     int size;                            /*当前目录大小*/
 };
 
@@ -151,7 +152,6 @@ void WriteABlock(int num, const T &a) {
 }
 
 
-extern int x();
 
 extern void ErrorHandling(const string &message);
 
@@ -177,7 +177,7 @@ extern inode *ialloc();
 
 extern void filefree(dinode &d);
 
-extern void login();
+extern void login(int uid, char *passwd);
 
 extern void logout();
 
@@ -206,5 +206,7 @@ extern vector<int> undirect(int loc, int lv, int lft);
 extern void fileread(dinode &d, char *buff, int size, int off);
 
 extern void filewrite(dinode &d, char *buff, int size, int off);
+
+extern void install();
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

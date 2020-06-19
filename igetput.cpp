@@ -47,15 +47,10 @@ void iput(inode *pinode) {
         if (pinode->dinode.di_number != 0) {
             fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
             dinode buff;
-            fs.read((char *) &buff, sizeof(buff));
-            fs.flush();
             buff = pinode->dinode;
             fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
             fs.write((char *) &buff, sizeof(dinode));
             fs.flush();
-            fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
-            fs.read((char *) &buff, sizeof(buff));
-            cout << 123;
         } else {
             filefree(pinode->dinode);
             ifree(pinode->i_ino);

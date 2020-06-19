@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/iallocfree.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o"
+  "CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o"
+  "CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/opfl.cpp.o"

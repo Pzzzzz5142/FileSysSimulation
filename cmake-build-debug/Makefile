@@ -285,6 +285,60 @@ igetput.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.s
 .PHONY : igetput.cpp.s
 
+install.o: install.cpp.o
+
+.PHONY : install.o
+
+# target to build an object file
+install.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o
+.PHONY : install.cpp.o
+
+install.i: install.cpp.i
+
+.PHONY : install.i
+
+# target to preprocess a source file
+install.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/install.cpp.i
+.PHONY : install.cpp.i
+
+install.s: install.cpp.s
+
+.PHONY : install.s
+
+# target to generate assembly for a file
+install.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/install.cpp.s
+.PHONY : install.cpp.s
+
+login.o: login.cpp.o
+
+.PHONY : login.o
+
+# target to build an object file
+login.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o
+.PHONY : login.cpp.o
+
+login.i: login.cpp.i
+
+.PHONY : login.i
+
+# target to preprocess a source file
+login.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.i
+.PHONY : login.cpp.i
+
+login.s: login.cpp.s
+
+.PHONY : login.s
+
+# target to generate assembly for a file
+login.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.s
+.PHONY : login.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -474,6 +528,12 @@ help:
 	@echo "... igetput.o"
 	@echo "... igetput.i"
 	@echo "... igetput.s"
+	@echo "... install.o"
+	@echo "... install.i"
+	@echo "... install.s"
+	@echo "... login.o"
+	@echo "... login.i"
+	@echo "... login.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

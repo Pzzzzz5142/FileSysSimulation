@@ -11,9 +11,6 @@ int opfl(int user_id, char *filename, int mode) {
         ErrorHandling("File not exist!");
     }
     inode *pre_inode = iget(curdir.direct[pos].d_ino);
-    for (int i = 0; i < SYSOPENFILE; i++)
-        if (sysopen_file[i].f_inode == pre_inode)
-            return i;
     int syspos, userpos;
     for (syspos = 0; syspos < SYSOPENFILE; syspos++) {
         if (sysopen_file[syspos].f_count == 0)
