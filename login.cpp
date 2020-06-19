@@ -10,7 +10,7 @@ void login(char* user, char *passwd) {
     inode *tmp = iget(2);
     fileread(tmp->dinode, buff, sizeof(buff), 0);
     int len = strlen(buff);
-    int ud = 0, flg = 1, ind = 0,uid,uind=0;
+    int ud = -1, flg = 1, ind = 0,uid,uind=0;
     for (int i = 0; i < len; i++) {
         if (buff[i] == '\t') {
             flg = 0;
@@ -18,6 +18,7 @@ void login(char* user, char *passwd) {
             continue;
         } else if (buff[i] == '\n') {
             pwd[ind] = 0;
+            ud++;
             if (strcmp(user,usr)==0) {
                 if(strcmp(pwd,passwd))
                     ErrorHandling("Invalid Password!");
@@ -42,8 +43,7 @@ void login(char* user, char *passwd) {
             ind=0;
         }
         if (flg == 1) {
-            ud += buff[i] - '0';
-            ud *= 10;
+            usr[uind++]=buff[i];
         } else {
             pwd[ind++]=buff[i];
         }

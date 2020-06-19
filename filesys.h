@@ -177,7 +177,7 @@ extern inode *ialloc();
 
 extern void filefree(dinode &d);
 
-extern void login(int uid, char *passwd);
+extern void login(char* uid, char *passwd);
 
 extern void logout();
 

@@ -22,7 +22,7 @@ int dir_alloc_name(char *name) {
         }
     }
     if (res == -1) {
-        printf("Current dir is full!");
+        ErrorHandling("Current dir is full!");
     } else {
         strcpy(curdir.direct[res].d_name, name);
     }

@@ -22,5 +22,7 @@ void install() {
     curdir.size = cur_path_inode->dinode.di_size;
 
     fileread(cur_path_inode->dinode, (char *) curdir.direct, curdir.size, 0);
-    curdir.user_id=-1;
+    for (int i = curdir.size / sizeof(direct); i < DIRNUM; i++)
+        curdir.direct[i].d_ino = -1;
+    curdir.user_id = -1;
 }

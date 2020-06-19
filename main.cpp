@@ -11,7 +11,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     format();
     install();
-    login(0,"password");
+    login("root","password");
     char buff[10000] = "Hello World alasdhfklklkajhdsflkjahsldfkhajsfdlsdjmmasldkfalsdhfkljashdflkjhasdflkjhaslkfdhklhadfkjhalksdhjflkahsdflkahjsdflf;laksdjf;alskjdfkjabsdflkajchiewruopisdfalkshdfkbvljkhdfjhpoeiurqwoiaksjdhfakbv.asdfhsf;lkahsdfjhakjsdfhlaksjdhflkasdjhfiopuerlajshdfklajhsfdklajhsdfkljahsdkfjhaksdjhfkashdfkjhasfdkhsakdfhkasjdhfkjshadfkjasfdkshdflkajhsdflkjahsdlkfjhalskdjfhlakjshdfklajshdfnambcxvzm,nxbcvlaksjdfhlkasjhdfiquweyralksjdfhlaksjhdflaksjhmnbxvm,znxbcvjkshdflkasjdhfasknbm,znbvlaksjhdfkajshriqwufeaskdflkasbvmnasbflkajhsdfkljasfsf";
     for(int i=strlen(buff);i<2048;i++){
         buff[i]='i';
