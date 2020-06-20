@@ -110,10 +110,16 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/install.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/link.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/log.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/main.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/move.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/name.cpp">

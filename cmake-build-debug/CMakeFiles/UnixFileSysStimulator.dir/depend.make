@@ -28,11 +28,17 @@ CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o: ../igetput.cpp
 CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o: ../install.cpp
 
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o: ../link.cpp
+
 CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o: ../log.cpp
 
 CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o: ../main.cpp
+
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o: ../move.cpp
 
 CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/name.cpp.o: ../name.cpp

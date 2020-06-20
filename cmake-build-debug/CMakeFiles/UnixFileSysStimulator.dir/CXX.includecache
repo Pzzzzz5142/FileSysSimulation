@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp
-filesys.h
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
-
 /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 iostream
 -
@@ -27,4 +23,8 @@ map
 -
 string.h
 -
+
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/link.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 

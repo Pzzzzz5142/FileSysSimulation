@@ -245,4 +245,8 @@ extern void init();
 
 extern void show();
 
+extern void move(char *filename, string targ);
+
+extern void share(char *filename, string targ);
+
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

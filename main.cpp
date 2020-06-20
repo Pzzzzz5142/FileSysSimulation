@@ -44,17 +44,22 @@ int main() {
         while (true) {
             show();
             getline(cin, cmd);
-            string tcmd, tmp;
+            string tcmd, tmp, orr;
             vector<string> args;
             int cnt = 0;
             for (auto i:cmd) {
                 if (i == ' ') {
                     if (cnt++ > 0)args.push_back(tmp);
+                    if (cnt > 2)
+                        orr += i;
                     tmp = "";
                 } else if (cnt == 0)
                     tcmd += i;
-                else
+                else {
                     tmp += i;
+                    if (cnt > 1)
+                        orr += i;
+                }
             }
             args.push_back(tmp);
             try {
@@ -79,23 +84,40 @@ int main() {
                     read(curdir.user_id, atoi((char *) args[0].c_str()), buff, sizeof(buff));
                     cout << buff << endl;
                 } else if (tcmd == "write") {
-                    write(curdir.user_id, atoi((char *) args[0].c_str()), (char *) args[1].c_str(),
-                          args[1].size() * sizeof(char));
+                    write(curdir.user_id, atoi((char *) args[0].c_str()), (char *) orr.c_str(),
+                          orr.size() * sizeof(char));
                 } else if (tcmd == "rm") {
                     del((char *) args[0].c_str());
                 } else if (tcmd == "cd") {
                     chdir((char *) args[0].c_str(), curdir);
                 } else if (tcmd == "close") {
                     close(curdir.user_id, atoi((char *) args[0].c_str()));
-                }
-                else if(tcmd=="mkdir")
-                {
-                    mkdir((char*)args[0].c_str());
+                } else if (tcmd == "mkdir") {
+                    mkdir((char *) args[0].c_str());
+                } else if (tcmd == "cat") {
+                    auto aa = opfl(curdir.user_id, (char *) args[0].c_str(), FREAD);
+                    char buff[1000000];
+                    read(curdir.user_id, aa, buff, sizeof(buff));
+                    cout << buff << endl;
+                    close(curdir.user_id, aa);
+                } else if (tcmd == "mv") {
+                    move((char *) args[0].c_str(), args[1]);
+                } else if (tcmd == "ln") {
+                    share((char *) args[0].c_str(), args[1]);
+                } else if (tcmd == "logout") {
+                    logout(curdir.user_id);
+                    break;
                 }
             } catch (string s) {
                 cerr << s << endl;
             }
         }
+        while (cmd != "y" && cmd != "n") {
+            cout << "退出吗？(y/n)：";
+            cin >> cmd;
+        }
+        if (cmd == "y")
+            break;
     }
     return 0;
 }

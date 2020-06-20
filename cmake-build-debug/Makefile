@@ -366,6 +366,33 @@ install.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/install.cpp.s
 .PHONY : install.cpp.s
 
+link.o: link.cpp.o
+
+.PHONY : link.o
+
+# target to build an object file
+link.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o
+.PHONY : link.cpp.o
+
+link.i: link.cpp.i
+
+.PHONY : link.i
+
+# target to preprocess a source file
+link.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/link.cpp.i
+.PHONY : link.cpp.i
+
+link.s: link.cpp.s
+
+.PHONY : link.s
+
+# target to generate assembly for a file
+link.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/link.cpp.s
+.PHONY : link.cpp.s
+
 log.o: log.cpp.o
 
 .PHONY : log.o
@@ -419,6 +446,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+move.o: move.cpp.o
+
+.PHONY : move.o
+
+# target to build an object file
+move.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o
+.PHONY : move.cpp.o
+
+move.i: move.cpp.i
+
+.PHONY : move.i
+
+# target to preprocess a source file
+move.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/move.cpp.i
+.PHONY : move.cpp.i
+
+move.s: move.cpp.s
+
+.PHONY : move.s
+
+# target to generate assembly for a file
+move.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/move.cpp.s
+.PHONY : move.cpp.s
 
 name.o: name.cpp.o
 
@@ -591,12 +645,18 @@ help:
 	@echo "... install.o"
 	@echo "... install.i"
 	@echo "... install.s"
+	@echo "... link.o"
+	@echo "... link.i"
+	@echo "... link.s"
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... move.o"
+	@echo "... move.i"
+	@echo "... move.s"
 	@echo "... name.o"
 	@echo "... name.i"
 	@echo "... name.s"

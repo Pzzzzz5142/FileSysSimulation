@@ -265,6 +265,32 @@ CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/delete.cpp -o CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.s
 
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o: CMakeFiles/UnixFileSysStimulator.dir/flags.make
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o: ../move.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o -c /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/move.cpp
+
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnixFileSysStimulator.dir/move.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/move.cpp > CMakeFiles/UnixFileSysStimulator.dir/move.cpp.i
+
+CMakeFiles/UnixFileSysStimulator.dir/move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/move.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/move.cpp -o CMakeFiles/UnixFileSysStimulator.dir/move.cpp.s
+
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o: CMakeFiles/UnixFileSysStimulator.dir/flags.make
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o: ../link.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o -c /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/link.cpp
+
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnixFileSysStimulator.dir/link.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/link.cpp > CMakeFiles/UnixFileSysStimulator.dir/link.cpp.i
+
+CMakeFiles/UnixFileSysStimulator.dir/link.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnixFileSysStimulator.dir/link.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/link.cpp -o CMakeFiles/UnixFileSysStimulator.dir/link.cpp.s
+
 # Object files for target UnixFileSysStimulator
 UnixFileSysStimulator_OBJECTS = \
 "CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o" \
@@ -282,7 +308,9 @@ UnixFileSysStimulator_OBJECTS = \
 "CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o" \
 "CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o" \
 "CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o" \
-"CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o"
+"CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o" \
+"CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o" \
+"CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o"
 
 # External object files for target UnixFileSysStimulator
 UnixFileSysStimulator_EXTERNAL_OBJECTS =
@@ -303,9 +331,11 @@ UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o
+UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/move.cpp.o
+UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/link.cpp.o
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/build.make
 UnixFileSysStimulator: CMakeFiles/UnixFileSysStimulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable UnixFileSysStimulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable UnixFileSysStimulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnixFileSysStimulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
