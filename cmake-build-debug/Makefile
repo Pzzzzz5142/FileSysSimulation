@@ -204,6 +204,60 @@ create.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/create.cpp.s
 .PHONY : create.cpp.s
 
+delete.o: delete.cpp.o
+
+.PHONY : delete.o
+
+# target to build an object file
+delete.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o
+.PHONY : delete.cpp.o
+
+delete.i: delete.cpp.i
+
+.PHONY : delete.i
+
+# target to preprocess a source file
+delete.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.i
+.PHONY : delete.cpp.i
+
+delete.s: delete.cpp.s
+
+.PHONY : delete.s
+
+# target to generate assembly for a file
+delete.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.s
+.PHONY : delete.cpp.s
+
+dir.o: dir.cpp.o
+
+.PHONY : dir.o
+
+# target to build an object file
+dir.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o
+.PHONY : dir.cpp.o
+
+dir.i: dir.cpp.i
+
+.PHONY : dir.i
+
+# target to preprocess a source file
+dir.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.i
+.PHONY : dir.cpp.i
+
+dir.s: dir.cpp.s
+
+.PHONY : dir.s
+
+# target to generate assembly for a file
+dir.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.s
+.PHONY : dir.cpp.s
+
 format.o: format.cpp.o
 
 .PHONY : format.o
@@ -312,32 +366,32 @@ install.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/install.cpp.s
 .PHONY : install.cpp.s
 
-login.o: login.cpp.o
+log.o: log.cpp.o
 
-.PHONY : login.o
+.PHONY : log.o
 
 # target to build an object file
-login.cpp.o:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o
-.PHONY : login.cpp.o
+log.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o
+.PHONY : log.cpp.o
 
-login.i: login.cpp.i
+log.i: log.cpp.i
 
-.PHONY : login.i
+.PHONY : log.i
 
 # target to preprocess a source file
-login.cpp.i:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.i
-.PHONY : login.cpp.i
+log.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/log.cpp.i
+.PHONY : log.cpp.i
 
-login.s: login.cpp.s
+log.s: log.cpp.s
 
-.PHONY : login.s
+.PHONY : log.s
 
 # target to generate assembly for a file
-login.cpp.s:
-	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/login.cpp.s
-.PHONY : login.cpp.s
+log.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/log.cpp.s
+.PHONY : log.cpp.s
 
 main.o: main.cpp.o
 
@@ -519,6 +573,12 @@ help:
 	@echo "... create.o"
 	@echo "... create.i"
 	@echo "... create.s"
+	@echo "... delete.o"
+	@echo "... delete.i"
+	@echo "... delete.s"
+	@echo "... dir.o"
+	@echo "... dir.i"
+	@echo "... dir.s"
 	@echo "... format.o"
 	@echo "... format.i"
 	@echo "... format.s"
@@ -531,9 +591,9 @@ help:
 	@echo "... install.o"
 	@echo "... install.i"
 	@echo "... install.s"
-	@echo "... login.o"
-	@echo "... login.i"
-	@echo "... login.s"
+	@echo "... log.o"
+	@echo "... log.i"
+	@echo "... log.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

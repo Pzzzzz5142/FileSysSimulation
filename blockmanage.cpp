@@ -35,7 +35,6 @@ void bfree(int num) {
 
 
 void filefree(dinode &d) {
-
     int blknum = d.di_size / BLOCKSIZ;
     if (blknum * BLOCKSIZ != d.di_size)
         blknum++;
@@ -64,6 +63,7 @@ void filefree(dinode &d) {
                 bfree(x);
         }
     }
+    d.di_size = 0;
 }
 
 void fileread(dinode &d, char *buff, int size, int off) {
@@ -156,6 +156,7 @@ void fileread(dinode &d, char *buff, int size, int off) {
 
 void filewrite(dinode &d, char *buff, int size, int off) {
     int blknum = d.di_size / BLOCKSIZ;
+    filefree(d);
     if (blknum * BLOCKSIZ != d.di_size)
         blknum++;
     int read_num = 0;
@@ -165,12 +166,15 @@ void filewrite(dinode &d, char *buff, int size, int off) {
         if (i < NADDR - 3) {//无间址
             read_num++;
             if (read_num == off_blk) {
+                d.di_addr[i] = balloc();
                 fs.seekp(DATASTART + BLOCKSIZ * d.di_addr[i] + off_in_blk, ios::beg);
                 fs.write(buff + loc, min(BLOCKSIZ - off_in_blk, size));
                 fs.flush();
                 loc += BLOCKSIZ - off_in_blk;
                 size -= min(BLOCKSIZ - off_in_blk, size);
             } else if (read_num > off_blk) {
+                if (i > blknum)
+                    d.di_addr[i] = balloc();
                 fs.seekp(DATASTART + BLOCKSIZ * d.di_addr[i], ios::beg);
                 fs.write(buff + loc, min(size, BLOCKSIZ));
                 fs.flush();

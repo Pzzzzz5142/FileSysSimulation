@@ -11,6 +11,7 @@
 #include <memory.h>
 #include <fstream>
 #include <vector>
+#include <map>
 #include <string.h>
 
 using namespace std;
@@ -86,10 +87,26 @@ struct inode {
 };
 
 const int MAXINODE = BLOCKSIZ / sizeof(dinode);
+
 struct direct {
     char d_name[DIRSIZ];
     int d_ino;
+
+    direct operator=(const direct &a) {
+        strcpy(d_name, a.d_name);
+        d_ino = a.d_ino;
+        return *this;
+    }
+
+    direct() {};
+
+    direct(const direct &a) {
+        strcpy(d_name, a.d_name);
+        d_ino = a.d_ino;
+    }
 };
+typedef direct ddd;
+
 const int DIRNUM = BLOCKSIZ / sizeof(direct);
 struct BlockCharge {
     int ind;
@@ -104,16 +121,33 @@ struct SP {
     int ihead;
     char s_fmod;                   /*超级块修改标志*/
 };
-struct pwd {
-    unsigned short p_uid;
-    unsigned short p_gid;
-    char password[PWDSIZ];
-};
+
 struct dir {
     vector<string> fa;
     direct direct[DIRNUM];
+    inode *inode;
     int user_id;
     int size;                            /*当前目录大小*/
+    dir operator=(const dir &a) {
+        fa = a.fa;
+        for (int i = 0; i < a.size / sizeof(ddd); i++)
+            direct[i] = a.direct[i];
+        inode = a.inode;
+        user_id = a.user_id;
+        size = a.size;
+        return *this;
+    }
+
+    dir() {}
+
+    dir(const dir &a) {
+        fa = a.fa;
+        for (int i = 0; i < a.size / sizeof(ddd); i++)
+            direct[i] = a.direct[i];
+        inode = a.inode;
+        user_id = a.user_id;
+        size = a.size;
+    }
 };
 
 struct file {
@@ -129,14 +163,13 @@ struct user {
     unsigned int open_num;
     /*system open file pointer number */
 };
-
-
 extern fstream fs;
 extern inode *hinode[NHINO]; //内存中inode的hash索引
 extern dir curdir;
 extern file sysopen_file[SYSOPENFILE];
 extern user users[USERNUM];
 extern SP SuperBlock;
+extern map<string, int> mmp;
 
 template<class T>
 void ReadABlock(int num, T &a) {
@@ -152,12 +185,11 @@ void WriteABlock(int num, const T &a) {
 }
 
 
-
 extern void ErrorHandling(const string &message);
 
 extern inode *iget(int dinodeloc);
 
-extern void iput(inode *pinode);
+extern int iput(inode *pinode);
 
 extern void ifree(int dinodeid);
 
@@ -177,9 +209,9 @@ extern inode *ialloc();
 
 extern void filefree(dinode &d);
 
-extern void login(char* uid, char *passwd);
+extern void login(char *uid, char *passwd);
 
-extern void logout();
+extern void logout(int uid);
 
 extern int create(int user_id, char *name, int mode);
 
@@ -193,11 +225,11 @@ extern int read(int user, int fl, char *buff, int size);
 
 extern int write(int user, int fl, char *buff, int size);
 
-extern void del();
+extern void del(char *filename);
 
-extern void mkdir();
+extern void mkdir(char* name);
 
-extern void cd();
+extern void chdir(char *path,dir&dr);
 
 extern void ls();
 
@@ -208,5 +240,9 @@ extern void fileread(dinode &d, char *buff, int size, int off);
 extern void filewrite(dinode &d, char *buff, int size, int off);
 
 extern void install();
+
+extern void init();
+
+extern void show();
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

@@ -14,17 +14,12 @@ int name_is_exist(char *name) {
 }
 
 int dir_alloc_name(char *name) {
-    int res = -1;
-    for (int i = 0; i < DIRNUM; i++) {
-        if (curdir.direct[i].d_ino == -1) {
-            res = i;
-            break;
-        }
-    }
-    if (res == -1) {
+    int res = curdir.size/sizeof(direct);
+    if (res == DIRNUM) {
         ErrorHandling("Current dir is full!");
     } else {
         strcpy(curdir.direct[res].d_name, name);
+        curdir.size+=sizeof(direct);
     }
     return res;
 }

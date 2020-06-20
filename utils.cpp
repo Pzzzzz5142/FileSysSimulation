@@ -33,3 +33,17 @@ vector<int> undirect(int loc, int lv, int lft) {
     }
     return res;
 }
+
+void init()
+{
+    mmp["ls"]=0;
+    mmp["open"]=1;
+    mmp["close"]=2;
+    mmp["create"]=3;
+    mmp["read"]=4;
+    mmp["write"]=5;
+    mmp["delete"]=6;
+    mmp["mkdir"]=7;
+    mmp["cd"]=8;
+    mmp["cat"]=9;
+}

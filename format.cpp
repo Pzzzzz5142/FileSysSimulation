@@ -25,17 +25,18 @@ void format() {
 
     inode *tmp = iget(0);//最根的目录
     tmp->dinode.di_mode = DIDIR;
-    tmp->dinode.di_number = 0;
+    tmp->dinode.di_number = 1;
     tmp->dinode.di_addr[0] = 0;
-    tmp->dinode.di_size = 3 * sizeof(direct);
+    tmp->dinode.di_size = 4 * sizeof(direct);
     dir_buff[0].d_ino = tmp->dinode.di_addr[0];
     strcpy(dir_buff[0].d_name, ".");
-    dir_buff[1].d_ino = tmp->dinode.di_addr[0];
+    dir_buff[1].d_ino = 0;
     strcpy(dir_buff[1].d_name, "..");
-    dir_buff[2].d_ino = 1;
+    dir_buff[2].d_ino = 0;
     strcpy(dir_buff[2].d_name, "etc");
-    dir_buff[2].d_ino = 2;
+    dir_buff[2].d_ino = 1;
     strcpy(dir_buff[3].d_name, "User");
+    dir_buff[3].d_ino=2;
     fs.seekp(DATASTART + BLOCKSIZ * tmp->dinode.di_addr[0], ios::beg);
     fs.write((char *) dir_buff, sizeof(direct) * 4);
     iput(tmp);
@@ -45,7 +46,7 @@ void format() {
     tmp->dinode.di_number = 1;
     tmp->dinode.di_addr[0] = 1;
     tmp->dinode.di_size = 3 * sizeof(direct);
-    dir_buff[0].d_ino = tmp->dinode.di_addr[0];
+    dir_buff[0].d_ino = 1;
     strcpy(dir_buff[0].d_name, ".");
     dir_buff[1].d_ino = 0;
     strcpy(dir_buff[1].d_name, "..");
@@ -57,10 +58,10 @@ void format() {
 
     tmp = iget(2);//User目录
     tmp->dinode.di_mode = DIDIR;
-    tmp->dinode.di_number = 2;
+    tmp->dinode.di_number = 1;
     tmp->dinode.di_addr[0] = 2;
     tmp->dinode.di_size = 2 * sizeof(direct);
-    dir_buff[0].d_ino = tmp->dinode.di_addr[0];
+    dir_buff[0].d_ino = 2;
     strcpy(dir_buff[0].d_name, ".");
     dir_buff[1].d_ino = 0;
     strcpy(dir_buff[1].d_name, "..");
@@ -70,7 +71,7 @@ void format() {
 
     tmp = iget(3);
     tmp->dinode.di_mode = DIFILE;
-    tmp->dinode.di_number = 3;
+    tmp->dinode.di_number = 1;
     strcpy(buff, "root\tpassword\n");
     tmp->dinode.di_size = strlen(buff) * sizeof(char);
     tmp->dinode.di_addr[0] = balloc();

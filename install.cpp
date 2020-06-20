@@ -20,6 +20,7 @@ void install() {
     inode *cur_path_inode = iget(0);
 
     curdir.size = cur_path_inode->dinode.di_size;
+    curdir.inode=cur_path_inode;
 
     fileread(cur_path_inode->dinode, (char *) curdir.direct, curdir.size, 0);
     for (int i = curdir.size / sizeof(direct); i < DIRNUM; i++)

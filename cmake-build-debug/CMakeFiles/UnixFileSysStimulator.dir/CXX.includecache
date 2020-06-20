@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp
+filesys.h
+/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+
 /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 iostream
 -
@@ -19,14 +23,8 @@ fstream
 -
 vector
 -
+map
+-
 string.h
 -
-
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/install.cpp
-filesys.h
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
-
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/name.cpp
-filesys.h
-/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 

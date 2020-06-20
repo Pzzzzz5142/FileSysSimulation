@@ -35,5 +35,4 @@ int opfl(int user_id, char *filename, int mode) {
     sysopen_file[syspos].f_inode = pre_inode;
     sysopen_file[syspos].f_off = 0;
     return userpos;
-
 }

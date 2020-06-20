@@ -36,13 +36,13 @@ inode *iget(int dinodeloc) {
     return tmp;
 }
 
-void iput(inode *pinode) {
+int iput(inode *pinode) {
     int ind = pinode->i_ino % NHINO;
 
     inode *loc = hinode[ind];
     if (pinode->i_count > 1) {
         pinode->i_count--;
-        return;
+        return 0;
     } else {
         if (pinode->dinode.di_number != 0) {
             fs.seekp(GetDinodeloc(pinode->i_ino), ios::beg);
@@ -61,7 +61,7 @@ void iput(inode *pinode) {
     if (loc->i_ino == pinode->i_ino) {
         hinode[ind] = loc->nx;
         free(loc);
-        return;
+        return 1;
     }
 
     while (loc->nx) {
@@ -69,8 +69,9 @@ void iput(inode *pinode) {
         if (tmp->i_ino == pinode->i_ino) {
             loc->nx = tmp->nx;
             free(tmp);
-            return;
+            return 1;
         }
     }
+    return  1;
 }
 

@@ -10,6 +10,12 @@ CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o
 CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/delete.cpp
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/format.cpp
@@ -22,9 +28,9 @@ CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o
 CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/install.cpp
-CMakeFiles/UnixFileSysStimulator.dir/login.cpp.o
+CMakeFiles/UnixFileSysStimulator.dir/log.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
- /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/login.cpp
+ /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/log.cpp
 CMakeFiles/UnixFileSysStimulator.dir/main.cpp.o
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h
  /Users/pzzzzz/CLionProjects/UnixFileSysStimulator/main.cpp

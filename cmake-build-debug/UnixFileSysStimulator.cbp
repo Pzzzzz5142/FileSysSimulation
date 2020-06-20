@@ -89,6 +89,12 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/delete.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/filesys.h">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
@@ -104,7 +110,7 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/install.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
-		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/login.cpp">
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/log.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/main.cpp">
