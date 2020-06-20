@@ -64,6 +64,7 @@ void logout(int uid)     /*logout*/
     for (j = 0; j < USEROPENFILE; j++) {
         if (users[i].u_ofile[j] != SYSOPENFILE + 1) {   /* iput the inode free the sys_ofile and clear the user_ofile*/
             sys_no = users[i].u_ofile[j];
+            users[i].u_uid = -1;
             inode = sysopen_file[sys_no].f_inode;
             iput(inode);
             sysopen_file[sys_no].f_count--;

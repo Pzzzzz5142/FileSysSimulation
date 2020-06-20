@@ -101,6 +101,9 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/format.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/halt.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/iallocfree.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>

@@ -285,6 +285,33 @@ format.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/format.cpp.s
 .PHONY : format.cpp.s
 
+halt.o: halt.cpp.o
+
+.PHONY : halt.o
+
+# target to build an object file
+halt.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.o
+.PHONY : halt.cpp.o
+
+halt.i: halt.cpp.i
+
+.PHONY : halt.i
+
+# target to preprocess a source file
+halt.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.i
+.PHONY : halt.cpp.i
+
+halt.s: halt.cpp.s
+
+.PHONY : halt.s
+
+# target to generate assembly for a file
+halt.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.s
+.PHONY : halt.cpp.s
+
 iallocfree.o: iallocfree.cpp.o
 
 .PHONY : iallocfree.o
@@ -636,6 +663,9 @@ help:
 	@echo "... format.o"
 	@echo "... format.i"
 	@echo "... format.s"
+	@echo "... halt.o"
+	@echo "... halt.i"
+	@echo "... halt.s"
 	@echo "... iallocfree.o"
 	@echo "... iallocfree.i"
 	@echo "... iallocfree.s"

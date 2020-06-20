@@ -19,6 +19,9 @@ CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o: ../format.cpp
 
+CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.o: ../halt.cpp
+
 CMakeFiles/UnixFileSysStimulator.dir/iallocfree.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/iallocfree.cpp.o: ../iallocfree.cpp
 

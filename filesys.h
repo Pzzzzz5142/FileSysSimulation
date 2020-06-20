@@ -105,6 +105,7 @@ struct direct {
         d_ino = a.d_ino;
     }
 };
+
 typedef direct ddd;
 
 const int DIRNUM = BLOCKSIZ / sizeof(direct);
@@ -227,9 +228,9 @@ extern int write(int user, int fl, char *buff, int size);
 
 extern void del(char *filename);
 
-extern void mkdir(char* name);
+extern void mkdir(char *name);
 
-extern void chdir(char *path,dir&dr);
+extern void chdir(char *path, dir &dr);
 
 extern void ls();
 
@@ -248,5 +249,7 @@ extern void show();
 extern void move(char *filename, string targ);
 
 extern void share(char *filename, string targ);
+
+extern int halt();
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

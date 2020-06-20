@@ -12,6 +12,7 @@ void ls() {
             cout << curdir.direct[i].d_name << "\t\tFile" << endl;
         else
             cout << curdir.direct[i].d_name << "\t\tDir" << endl;
+        iput(tmp);
     }
 }
 
@@ -48,6 +49,7 @@ dir find_path(vector<string> chpath, dir tt) {
                 iput(temp_inode);
                 continue;
             } else {
+                iput(tt.inode);
                 vector<string> tmp;
                 for (int i = 1; i < chpath.size(); i++)
                     tmp.push_back(chpath[i]);
@@ -56,7 +58,6 @@ dir find_path(vector<string> chpath, dir tt) {
                         return find_path(tmp, tt);
                     else
                         return tt;
-                iput(tt.inode);
                 fileread(temp_inode->dinode, (char *) new_dir.direct, temp_inode->dinode.di_size, 0);
                 new_dir.inode = temp_inode;
                 new_dir.size = temp_inode->dinode.di_size;
@@ -90,6 +91,7 @@ void chdir(char *path, dir &dr) {
     if (ph[0] != '/') {
         SplitString(ph, chdirp, "/");
         filefree(dr.inode->dinode);
+        dr.inode->dinode.di_size = dr.size;
         int ind = 0, size = min(BLOCKSIZ, dr.size), ii = 0, x = dr.size;
         while (x) {
             block = balloc();
@@ -100,7 +102,6 @@ void chdir(char *path, dir &dr) {
             x -= size;
             size = min(BLOCKSIZ, x);
         }
-        dr.inode->dinode.di_size = dr.size;
         dr = find_path(chdirp, dr);
     } else {/*
         string str = path;

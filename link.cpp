@@ -5,7 +5,7 @@
 
 void share(char *filename, string targ) {
     int i;
-    if(targ.size()==0)
+    if (targ.size() == 0)
         ErrorHandling("No target path!");
     //判断文件or文件夹是否存在
     int pos = name_is_exist(filename);
@@ -44,5 +44,7 @@ void share(char *filename, string targ) {
     iput(tem_file);
     iput(tmp_d);
     chdir(".", curdir);
+    iput(curdir.inode);
     curdir = dir_tmp;
+    curdir.inode = iget(curdir.direct[0].d_ino);
 }

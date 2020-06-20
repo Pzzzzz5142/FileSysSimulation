@@ -23,8 +23,6 @@ int create(int user_id, char *name, int mode) {
         tmp->dinode.di_number = 1;
         curdir.direct[dir_num].d_ino = tmp->i_ino;
 
-
-
         int syspos, userpos;
         for (syspos = 0; syspos < SYSOPENFILE; syspos++) {
             if (sysopen_file[syspos].f_count == 0)

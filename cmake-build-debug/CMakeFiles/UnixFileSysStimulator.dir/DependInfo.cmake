@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/delete.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/format.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/format.cpp.o"
+  "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/halt.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/halt.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/iallocfree.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/iallocfree.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/igetput.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/igetput.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/install.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/install.cpp.o"

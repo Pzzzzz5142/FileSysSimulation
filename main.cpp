@@ -38,7 +38,6 @@ int main() {
         psw[ind] = 0;
         try { login((char *) usr.c_str(), psw); }
         catch (string s) {
-            cerr << s << endl;
             continue;
         }
         while (true) {
@@ -109,7 +108,6 @@ int main() {
                     break;
                 }
             } catch (string s) {
-                cerr << s << endl;
             }
         }
         while (cmd != "y" && cmd != "n") {
@@ -119,5 +117,6 @@ int main() {
         if (cmd == "y")
             break;
     }
+    halt();
     return 0;
 }
