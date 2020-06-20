@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/blockmanage.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/blockmanage.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o"
+  "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cppst.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/delete.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/dir.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o"

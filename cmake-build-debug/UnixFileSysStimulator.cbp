@@ -86,6 +86,9 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/close.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cppst.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/create.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>

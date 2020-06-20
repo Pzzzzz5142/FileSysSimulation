@@ -7,6 +7,9 @@ CMakeFiles/UnixFileSysStimulator.dir/blockmanage.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o: ../close.cpp
 CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o: ../filesys.h
 
+CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.o: ../cppst.cpp
+CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.o: ../filesys.h
+
 CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o: ../create.cpp
 CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o: ../filesys.h
 

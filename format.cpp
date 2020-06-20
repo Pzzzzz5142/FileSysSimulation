@@ -13,7 +13,7 @@ void format() {
 
     SuperBlock.charge.ind = 0;
     SuperBlock.charge.stk[0] = -1;
-    for (int i = 3; i < FILEBLK; i++)//初始化成组链接法，0为根目录，1为etc目录
+    for (int i = 4; i < FILEBLK; i++)//初始化成组链接法，0为根目录，1为etc目录
     {
         bfree(i);
     }
@@ -26,6 +26,7 @@ void format() {
     inode *tmp = iget(0);//最根的目录
     tmp->dinode.di_mode = DIDIR;
     tmp->dinode.di_number = 1;
+    tmp->dinode.di_uid = 0;
     tmp->dinode.di_addr[0] = 0;
     tmp->dinode.di_size = 4 * sizeof(direct);
     dir_buff[0].d_ino = tmp->dinode.di_addr[0];
@@ -36,7 +37,7 @@ void format() {
     strcpy(dir_buff[2].d_name, "etc");
     dir_buff[2].d_ino = 1;
     strcpy(dir_buff[3].d_name, "User");
-    dir_buff[3].d_ino=2;
+    dir_buff[3].d_ino = 2;
     fs.seekp(DATASTART + BLOCKSIZ * tmp->dinode.di_addr[0], ios::beg);
     fs.write((char *) dir_buff, sizeof(direct) * 4);
     iput(tmp);
@@ -44,6 +45,7 @@ void format() {
     tmp = iget(1);//etc目录
     tmp->dinode.di_mode = DIDIR;
     tmp->dinode.di_number = 1;
+    tmp->dinode.di_uid = 0;
     tmp->dinode.di_addr[0] = 1;
     tmp->dinode.di_size = 3 * sizeof(direct);
     dir_buff[0].d_ino = 1;
@@ -64,6 +66,7 @@ void format() {
     dir_buff[0].d_ino = 2;
     strcpy(dir_buff[0].d_name, ".");
     dir_buff[1].d_ino = 0;
+    tmp->dinode.di_uid = 0;
     strcpy(dir_buff[1].d_name, "..");
     fs.seekp(DATASTART + BLOCKSIZ * tmp->dinode.di_addr[0], ios::beg);
     fs.write((char *) dir_buff, sizeof(direct) * 2);
@@ -72,9 +75,10 @@ void format() {
     tmp = iget(3);
     tmp->dinode.di_mode = DIFILE;
     tmp->dinode.di_number = 1;
+    tmp->dinode.di_uid = 0;
     strcpy(buff, "root\tpassword\n");
     tmp->dinode.di_size = strlen(buff) * sizeof(char);
-    tmp->dinode.di_addr[0] = balloc();
+    tmp->dinode.di_addr[0] = 3;
     fs.seekp(DATASTART + tmp->dinode.di_addr[0] * BLOCKSIZ, ios::beg);
     fs.write(buff, sizeof(char) * (strlen(buff) + 1));
     iput(tmp);

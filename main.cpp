@@ -7,6 +7,8 @@ dir curdir;
 file sysopen_file[SYSOPENFILE];
 user users[USERNUM];
 SP SuperBlock;
+char cpbuff[100000000], cpname[1000000];
+int cpp;
 map<string, int> mmp;
 string cmd;
 
@@ -22,26 +24,21 @@ int main() {
     install();
     while (cmd != "exit") {
         string usr;
+        cpp = 0;
         char psw[100000], c;
         int ind = 0;
         cout << "Username: ";
         cin >> usr;
         cout << "Password: ";
-        getchar();
-        while ((c = getchar()) != '\n') {
-            if (c == '\b') {
-                ind--;
-                ind = max(0, ind);
-            } else
-                psw[ind++] = c;
-        }
-        psw[ind] = 0;
+        cin >> psw;
         try { login((char *) usr.c_str(), psw); }
         catch (string s) {
             continue;
         }
+        cin.get();
         while (true) {
             show();
+
             getline(cin, cmd);
             string tcmd, tmp, orr;
             vector<string> args;
@@ -103,6 +100,13 @@ int main() {
                     move((char *) args[0].c_str(), args[1]);
                 } else if (tcmd == "ln") {
                     share((char *) args[0].c_str(), args[1]);
+                } else if (tcmd == "create_user") {
+                    create_user(args[0], args[1]);
+                } else if (tcmd == "cp") {
+                    cpp = 1;
+                    cp((char *) args[0].c_str());
+                } else if (tcmd == "pt") {
+                    pt();
                 } else if (tcmd == "logout") {
                     logout(curdir.user_id);
                     break;

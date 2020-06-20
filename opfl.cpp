@@ -11,6 +11,18 @@ int opfl(int user_id, char *filename, int mode) {
         ErrorHandling("File not exist!");
     }
     inode *pre_inode = iget(curdir.direct[pos].d_ino);
+    if (pre_inode->dinode.di_uid != curdir.user_id && pre_inode->dinode.di_number == 1) {
+        iput(pre_inode);
+        ErrorHandling("Permission denied!");
+    }
+    if(pre_inode->dinode.di_mode!=DIFILE)
+    {
+        iput(pre_inode);
+        ErrorHandling("It is not a file!");
+    }
+    for (; user_ind < USERNUM; user_ind++)
+        if (users[user_ind].u_uid == user_id)
+            break;
     int syspos, userpos;
     for (syspos = 0; syspos < SYSOPENFILE; syspos++) {
         if (sysopen_file[syspos].f_count == 0)

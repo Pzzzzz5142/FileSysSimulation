@@ -177,6 +177,33 @@ close.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/close.cpp.s
 .PHONY : close.cpp.s
 
+cppst.o: cppst.cpp.o
+
+.PHONY : cppst.o
+
+# target to build an object file
+cppst.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.o
+.PHONY : cppst.cpp.o
+
+cppst.i: cppst.cpp.i
+
+.PHONY : cppst.i
+
+# target to preprocess a source file
+cppst.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.i
+.PHONY : cppst.cpp.i
+
+cppst.s: cppst.cpp.s
+
+.PHONY : cppst.s
+
+# target to generate assembly for a file
+cppst.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.s
+.PHONY : cppst.cpp.s
+
 create.o: create.cpp.o
 
 .PHONY : create.o
@@ -651,6 +678,9 @@ help:
 	@echo "... close.o"
 	@echo "... close.i"
 	@echo "... close.s"
+	@echo "... cppst.o"
+	@echo "... cppst.i"
+	@echo "... cppst.s"
 	@echo "... create.o"
 	@echo "... create.i"
 	@echo "... create.s"

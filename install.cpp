@@ -12,6 +12,7 @@ void install() {
         sysopen_file[i].f_count = 0;
         sysopen_file[i].f_inode = nullptr;
     }
+
     for (int i = 0; i < USERNUM; i++) {
         users[i].u_uid = -1;
         for (int j = 0; j < USEROPENFILE; j++)
@@ -20,7 +21,7 @@ void install() {
     inode *cur_path_inode = iget(0);
 
     curdir.size = cur_path_inode->dinode.di_size;
-    curdir.inode=cur_path_inode;
+    curdir.inode = cur_path_inode;
 
     fileread(cur_path_inode->dinode, (char *) curdir.direct, curdir.size, 0);
     for (int i = curdir.size / sizeof(direct); i < DIRNUM; i++)

@@ -86,62 +86,36 @@ void chdir(char *path, dir &dr) {
     unsigned short block;
     int cur_ino;
     string ph = path;
-
+    filefree(dr.inode->dinode);
+    dr.inode->dinode.di_size = dr.size;
+    int ind = 0, size = min(BLOCKSIZ, dr.size), ii = 0, x = dr.size;
+    while (x) {
+        block = balloc();
+        dr.inode->dinode.di_addr[ii++] = block;
+        fs.seekp(DATASTART + block * BLOCKSIZ, ios::beg);
+        fs.write((char *) dr.direct + ind, size);
+        ind += size / sizeof(direct);
+        x -= size;
+        size = min(BLOCKSIZ, x);
+    }
     dir new_dir;
     if (ph[0] != '/') {
         SplitString(ph, chdirp, "/");
-        filefree(dr.inode->dinode);
-        dr.inode->dinode.di_size = dr.size;
-        int ind = 0, size = min(BLOCKSIZ, dr.size), ii = 0, x = dr.size;
-        while (x) {
-            block = balloc();
-            dr.inode->dinode.di_addr[ii++] = block;
-            fs.seekp(DATASTART + block * BLOCKSIZ, ios::beg);
-            fs.write((char *) dr.direct + ind, size);
-            ind += size / sizeof(direct);
-            x -= size;
-            size = min(BLOCKSIZ, x);
-        }
         dr = find_path(chdirp, dr);
-    } else {/*
-        string str = path;
-        vector<string> v;
-        SplitString(str, v, "/"); //可按多个字符来分隔;
-        int p = 0;
-        int dir_id;
-        dir_id = name_is_exist("..");
-        struct inode *pinode;
-        struct inode *cur_inode;
-        char *buff;
-        while (dir_id != NULL) {
-            pinode = iget(curdir.direct[dir_id].d_ino); //上一个结点对应
-            //cur_inode=iget(curdir.)
-
-            curdir.fa.pop_back();
-
-            //fileread()
-            fileread(pinode->dinode, buff, sizeof(direct) * 2, 512);
-
-            dir_id = buff[1].d_ino;
-        }
-
-        inode* root_inode= nullptr;
-        int a;
-        struct inode *temp_node;
-
-        int dir_id1;
-        for (a = 0; a < v.size(); a++) {
-            dir_id1 = name_is_exist(v[a]);
-            if (dir_id1 == NULL) {
-                cout << "路径有误" << endl;
-            } else {
-                curdir.fa.push_back(v[a]);
-
-                temp_node = iget(dir_id1);
-
-                fileread(temp_node->dinode, buff, sizeof(direct) * 2, 512);
-            }
-        }*/
+    } else {
+        string tmp;
+        for (int i = 1; i < ph.size(); i++)
+            tmp += ph[i];
+        SplitString(tmp, chdirp, "/");
+        iput(dr.inode);
+        auto *cur_path_inode = iget(0);
+        dr.size = cur_path_inode->dinode.di_size;
+        dr.inode = cur_path_inode;
+        fileread(cur_path_inode->dinode, (char *) dr.direct, dr.size, 0);
+        for (int i = dr.size / sizeof(direct); i < DIRNUM; i++)
+            dr.direct[i].d_ino = -1;
+        dr.fa.clear();
+        dr = find_path(chdirp, dr);
     }
 }
 

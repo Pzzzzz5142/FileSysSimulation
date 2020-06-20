@@ -30,12 +30,14 @@ int read(int user, int fl, char *buff, int size) {
     }
     fileread(node->dinode, buff, size, off);
     off += size;
+    buff[size] = 0;
     return size;
 }
 
 int write(int user, int fl, char *buff, int size) {
     int off;
     int user_id = -1;
+    buff[size++] = 0;
     for (int i = 0; i < USERNUM; i++) {
         if (users[i].u_uid == user) {
             user_id = i;
@@ -62,7 +64,6 @@ int write(int user, int fl, char *buff, int size) {
     node->dinode.di_size = off + size;
 
     int blk = (size + BLOCKSIZ) / BLOCKSIZ;
-    int note = BLOCKSIZ / sizeof(int);
     int loc = 0;
     int off_in_blk = off % BLOCKSIZ, off_blk = off / BLOCKSIZ;
     int wt = 0;

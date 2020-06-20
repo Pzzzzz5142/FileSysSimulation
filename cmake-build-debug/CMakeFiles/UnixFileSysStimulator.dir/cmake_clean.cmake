@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/UnixFileSysStimulator.dir/blockmanage.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/close.cpp.o"
+  "CMakeFiles/UnixFileSysStimulator.dir/cppst.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/create.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/delete.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/dir.cpp.o"

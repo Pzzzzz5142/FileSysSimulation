@@ -159,7 +159,7 @@ struct file {
 };
 struct user {
     unsigned short u_default_mode;
-    unsigned short u_uid;
+    int u_uid;
     unsigned short u_ofile[USEROPENFILE];       /*用户打开文件表*/
     unsigned int open_num;
     /*system open file pointer number */
@@ -171,6 +171,8 @@ extern file sysopen_file[SYSOPENFILE];
 extern user users[USERNUM];
 extern SP SuperBlock;
 extern map<string, int> mmp;
+extern char cpbuff[100000000], cpname[1000000];
+extern int cpp;
 
 template<class T>
 void ReadABlock(int num, T &a) {
@@ -251,5 +253,11 @@ extern void move(char *filename, string targ);
 extern void share(char *filename, string targ);
 
 extern int halt();
+
+extern void create_user(string name, string pass);
+
+extern void cp(char *filename);
+
+extern void pt();
 
 #endif //UNIXFILESYSSTIMULATOR_FILESYS_H

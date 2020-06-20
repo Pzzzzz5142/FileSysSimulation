@@ -17,6 +17,9 @@ void del(char *filename) {
     else
         ErrorHandling("No such file");
 
+    if(inode->dinode.di_uid!=curdir.user_id&&inode->dinode.di_number==1)
+        ErrorHandling("Permission denied!");
+
     for(int i=0;i<SYSOPENFILE;i++)
     {
         if(sysopen_file[i].f_count&&sysopen_file[i].f_inode==inode)

@@ -85,3 +85,25 @@ int create(int user_id, char *name, int mode) {
         return userpos;
     }
 }
+
+void create_user(string name, string pass) {
+    if (curdir.user_id != 0)
+        ErrorHandling("Permission Denied!");
+    char buff[100000];
+    dir tmp = curdir;
+    chdir("/etc", curdir);
+    auto fl = opfl(curdir.user_id, "password", FREAD);
+    read(curdir.user_id, fl, buff, sizeof(buff));
+    close(curdir.user_id, fl);
+    string a = buff;
+    a += name + "\t" + pass + "\n";
+    fl = opfl(curdir.user_id, "password", FWRITE);
+    write(curdir.user_id, fl, (char *) a.c_str(), a.size() * sizeof(char));
+    close(curdir.user_id, fl);
+    chdir("/User", curdir);
+    mkdir((char *) name.c_str());
+    chdir(".", curdir);
+    iput(curdir.inode);
+    curdir = tmp;
+    curdir.inode = iget(curdir.direct[0].d_ino);
+}
