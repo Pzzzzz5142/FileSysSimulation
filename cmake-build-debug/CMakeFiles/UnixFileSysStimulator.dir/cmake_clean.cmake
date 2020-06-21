@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/try.cpp.o"
   "CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.o"
+  "CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.o"
   "UnixFileSysStimulator"
   "UnixFileSysStimulator.pdb"
 )

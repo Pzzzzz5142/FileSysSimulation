@@ -13,10 +13,11 @@
 #include <vector>
 #include <map>
 #include <string.h>
+#include <sstream>
 
 using namespace std;
 
-const int BLOCKSIZ = 1024; //每块的大小
+const int BLOCKSIZ = 512; //每块的大小
 #define SYSOPENFILE 40 //系统打开文件表的最大数目
 #define DIRSIZ 14
 #define PWDSIZ 12
@@ -222,7 +223,7 @@ extern int opfl(int user_id, char *filename, int mode);
 
 extern void close(unsigned int user_id, unsigned short cfd);
 
-extern void vi();
+extern void vi(char *filename);
 
 extern int read(int user, int fl, char *buff, int size);
 

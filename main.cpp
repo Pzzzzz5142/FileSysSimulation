@@ -107,7 +107,11 @@ int main() {
                     cp((char *) args[0].c_str());
                 } else if (tcmd == "pt") {
                     pt();
-                } else if (tcmd == "logout") {
+                }else if(tcmd=="vi")
+                {
+                    vi((char*)args[0].c_str());
+                }
+                else if (tcmd == "logout") {
                     logout(curdir.user_id);
                     break;
                 }

@@ -60,3 +60,6 @@ CMakeFiles/UnixFileSysStimulator.dir/try.cpp.o: ../try.cpp
 CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.o: ../filesys.h
 CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.o: ../utils.cpp
 
+CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.o: ../filesys.h
+CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.o: ../vi.cpp
+

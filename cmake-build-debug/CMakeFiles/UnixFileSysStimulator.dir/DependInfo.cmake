@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/rdwt.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/rdwt.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/try.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/try.cpp.o"
   "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/utils.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.o"
+  "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/vi.cpp" "/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/cmake-build-debug/CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

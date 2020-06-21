@@ -663,6 +663,33 @@ utils.cpp.s:
 	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/utils.cpp.s
 .PHONY : utils.cpp.s
 
+vi.o: vi.cpp.o
+
+.PHONY : vi.o
+
+# target to build an object file
+vi.cpp.o:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.o
+.PHONY : vi.cpp.o
+
+vi.i: vi.cpp.i
+
+.PHONY : vi.i
+
+# target to preprocess a source file
+vi.cpp.i:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.i
+.PHONY : vi.cpp.i
+
+vi.s: vi.cpp.s
+
+.PHONY : vi.s
+
+# target to generate assembly for a file
+vi.cpp.s:
+	$(MAKE) -f CMakeFiles/UnixFileSysStimulator.dir/build.make CMakeFiles/UnixFileSysStimulator.dir/vi.cpp.s
+.PHONY : vi.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -732,6 +759,9 @@ help:
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"
+	@echo "... vi.o"
+	@echo "... vi.i"
+	@echo "... vi.s"
 .PHONY : help
 
 

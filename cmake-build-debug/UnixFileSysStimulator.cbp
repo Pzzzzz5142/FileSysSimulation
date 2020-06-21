@@ -143,6 +143,9 @@
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/utils.cpp">
 			<Option target="UnixFileSysStimulator"/>
 		</Unit>
+		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/vi.cpp">
+			<Option target="UnixFileSysStimulator"/>
+		</Unit>
 		<Unit filename="/Users/pzzzzz/CLionProjects/UnixFileSysStimulator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
